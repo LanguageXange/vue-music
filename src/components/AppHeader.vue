@@ -1,3 +1,25 @@
+<script>
+import { mapStores, mapWritableState, mapActions } from 'pinia'
+import useModalStore from '@/stores/modal'
+
+export default {
+  name: 'AppHeader',
+  computed: {
+    ...mapStores(useModalStore), // #1
+    ...mapWritableState(useModalStore, ['isOpen']), //#2
+    ...mapActions(useModalStore, ['toggle']) //#3
+  },
+  methods: {
+    toggleAuthModal() {
+      console.log(this)
+      // this.modalStore.isOpen = !this.modalStore.isOpen // #1
+      this.isOpen = !this.isOpen // #2
+      console.log(this.isOpen)
+    }
+  }
+}
+</script>
+
 <template>
   <!-- Header -->
   <header id="header" class="bg-gray-700">
@@ -15,6 +37,11 @@
             >
           </li>
           <li>
+            <a class="px-2 text-white" href="#" @click.prevent="toggle()"
+              >Testing Modal Toggle with Actions</a
+            >
+          </li>
+          <li>
             <a class="px-2 text-white" href="#">Manage</a>
           </li>
         </ul>
@@ -23,23 +50,5 @@
   </header>
 </template>
 
-<script>
-import { mapStores } from 'pinia'
-import useModalStore from '@/stores/modal'
-
-export default {
-  name: 'AppHeader',
-  computed: {
-    ...mapStores(useModalStore)
-  },
-  methods: {
-    toggleAuthModal() {
-      console.log(this)
-      this.modalStore.isOpen = !this.modalStore.isOpen
-      console.log(this.modalStore.isOpen)
-    }
-  }
-}
-</script>
-
 <style lang="scss" scoped></style>
+, mapWritableState
