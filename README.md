@@ -23,12 +23,26 @@ mapState (readonly) vs mapWritableState
 
 getters - think of them as computed properties for your store; accessible in all components; only update if the state changes this can help with performance
 
-Alias 
+Alias
+
 ```
  ...mapWritableState(useModalStore, {
       isModelOpen:"isOpen"
     })
 ```
+
+### Form Validation
+
+- reduce num of reqs sent to the server.
+
+VeeValidate or Vuelidate
+https://vee-validate.logaretm.com/v4/
+`pnpm add vee-validate`
+
+create a dir `includes` to organize plugin and non-plugins files
+https://vuejs.org/guide/components/registration
+
+We will validate more than one form so we can register it at the global level
 
 ## Recommended IDE Setup
 
