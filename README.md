@@ -44,6 +44,23 @@ https://vuejs.org/guide/components/registration
 
 We will validate more than one form so we can register it at the global level
 
+### Validation components
+
+login and registration forms
+switch `form` to `vee-form`
+
+validation process:
+
+1. Use the Field component. (vee-field)
+2. Assign a name to the input.
+3. Add the rules.
+4. Handle the errors
+
+### Defining Rules
+
+`pnpm add @vee-validate/rules`
+https://vee-validate.logaretm.com/v4/guide/global-validators#vee-validaterules
+
 ## Recommended IDE Setup
 
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
